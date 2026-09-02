@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notetacker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Notes">
+        <div class="brand-row">
+          <div>
+            <p class="eyebrow">Workspace</p>
+            <h1>Notetacker</h1>
+          </div>
+          <button class="icon-button" type="button" id="newNoteButton" aria-label="Create note">
+            +
+          </button>
+        </div>
+
+        <label class="search-field" for="noteSearch">
+          <span aria-hidden="true">Search</span>
+          <input
+            id="noteSearch"
+            type="search"
+            placeholder="Search notes"
+            autocomplete="off"
+          />
+        </label>
+
+        <nav class="note-list" id="noteList" aria-label="Saved notes">
+                 </nav>
+      </aside>
+
+      <main class="editor-pane">
+        <header class="editor-header">
+          <div class="title-block">
+            <label class="eyebrow" for="noteTitle">Current note</label>
+   <input
+  id="noteTitle"
+  class="title-input"
+  type="text"
+  placeholder="Untitled note"
+/>
+          </div>
+
+          <div class="action-row">
+            <button class="ghost-button" type="button" id="deleteNoteButton">Delete</button>
+            <button class="primary-button" type="button" id="saveNoteButton">Save note</button>
+          </div>
+        </header>
+
+        <section class="editor-surface" aria-label="Note editor">
+          <div id="toolbar">
+            <span class="ql-formats">
+              <select class="ql-header">
+                <option selected></option>
+                <option value="1"></option>
+                <option value="2"></option>
+              </select>
+              <button class="ql-bold" type="button"></button>
+              <button class="ql-italic" type="button"></button>
+              <button class="ql-underline" type="button"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered" type="button"></button>
+              <button class="ql-list" value="bullet" type="button"></button>
+              <button class="ql-blockquote" type="button"></button>
+              <button class="ql-code-block" type="button"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-link" type="button"></button>
+              <button class="ql-clean" type="button"></button>
+            </span>
+          </div>
+
+          <div id="editor">
+            <h2>Welcome to Notetacker</h2>
+            <p>
+              Use this layout as your practice playground. Your JavaScript can create notes,
+              switch between them, search the list, and save Quill content to localStorage.
+            </p>
+            <p><br /></p>
+          </div>
+        </section>
+
+        <footer class="status-bar">
+          <span id="saveStatus">Ready to write</span>
+          <span id="wordCount">0 words</span>
+        </footer>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
