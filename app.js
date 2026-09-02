@@ -4,7 +4,6 @@ const quill = new Quill("#editor", {
     toolbar: "#toolbar",
   },
 });
-
 // 5. Update #saveStatus and #wordCount as the user types.
 
 const saveBtn = document.getElementById("saveNoteButton");
